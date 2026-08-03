@@ -223,6 +223,17 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* the footer sits at the viewport's bottom edge — a translate would poke
+   past it and flash a scrollbar during the intro, so it fades in place */
+footer.rise {
+  transform: none;
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rise { animation: none; opacity: 1; transform: none; }
   .rec-dot { animation: none; }
